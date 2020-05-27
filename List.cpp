@@ -1,7 +1,7 @@
 #include "List.h"
 
 template <typename Data>
-void List<Data>::addBegin(Data* newData) {
+void List<Data>::addBegin(Data newData) {
 	element* temp = new element;
 	temp->data = newData;
 	temp->next = begin;

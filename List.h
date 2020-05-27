@@ -4,7 +4,7 @@
 
 template <typename Data>
 class List {
-private:
+public:
 	struct element {
 		Data data;
 		element* next;
@@ -12,9 +12,7 @@ private:
 
 	element* begin = nullptr;
 
-public:
-
-	void addBegin(Data* newData);
+	void addBegin(Data newData);
 	void insert(element* current, Data* newData);
 	void addEnd(Data* newData);
 	void printList(element* current);

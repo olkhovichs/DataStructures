@@ -20,13 +20,13 @@ int menuList() {
 
 int main()
 {
-	List <int> number;
-	List <void> action;
 	int choice = menuList();
+	List<int> action;
 	switch (choice) {
 	case 1:
-		system("cls");
-		action.addBegin(number);
-
+		std::cout << "Add" << std::endl;
+		action.addBegin(4);
+		break;
 	}
+	return 0;
 }
