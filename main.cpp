@@ -21,11 +21,12 @@ int menuList() {
 int main()
 {
 	int choice = menuList();
-	List<int> action;
+	List<void> action;
+	int number;
 	switch (choice) {
 	case 1:
 		std::cout << "Add" << std::endl;
-		action.addBegin(4);
+		action.addBegin(static_cast<void>(number)); // приведение типов (ошибка с2664)
 		break;
 	}
 	return 0;

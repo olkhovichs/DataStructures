@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+
 template <typename Data>
 class List {
 public:
@@ -12,10 +13,12 @@ public:
 
 	element* begin = nullptr;
 
-	void addBegin(Data newData);
+	void addBegin(Data* newData);
 	void insert(element* current, Data* newData);
 	void addEnd(Data* newData);
 	void printList(element* current);
 	void deleteNode(element* current);
 	void deleteList(element* begin);
 };
+
+#include "List.inl"
