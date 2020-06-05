@@ -1,16 +1,16 @@
 #include "List.h"
 
 template <typename Data>
-void List<Data>::addBegin(Data* newData) {
-	element* temp = new element;
+void List<Data>::addBegin(Data newData) {
+	Node* temp = new Node;
 	temp->data = newData;
 	temp->next = begin;
 	begin = temp;
 }
 
 template <typename Data>
-void List<Data>::insert(element* current, Data* newData) {
-	element* temp = new element;
+void List<Data>::insert(Node* current, Data* newData) {
+	Node* temp = new Node;
 	temp->data = newData;
 	temp->next = current->next;
 	current->next = temp;
@@ -18,8 +18,8 @@ void List<Data>::insert(element* current, Data* newData) {
 
 template <typename Data>
 void List<Data>::addEnd(Data* newData) {
-	element* temp = new element;
-	element* current = new element;
+	Node* temp = new Node;
+	Node* current = new Node;
 	current = begin;
 	temp->data = newData;
 	temp->next = nullptr;
@@ -34,8 +34,8 @@ void List<Data>::addEnd(Data* newData) {
 	}
 }
 
-template <typename Data>
-void List<Data>::printList(element* current) {
+/*template <typename Data>
+void List<Data>::printList() {
 	if (!current) {
 		std::cout << "The list is empty" << std::endl;
 	}
@@ -45,18 +45,18 @@ void List<Data>::printList(element* current) {
 			current = current->next;
 		}
 	}
-}
+}*/
 
 template <typename Data>
-void List<Data>::deleteNode(element* current) {
-	element* temp = current->next;
+void List<Data>::deleteNode(Node* current) {
+	Node* temp = current->next;
 	current->next = temp->next;
 	free(temp);
 }
 
 template <typename Data>
-void List<Data>::deleteList(element* begin) {
-	element* temp;
+void List<Data>::deleteList(Node* begin) {
+	Node* temp = new Node;
 	if (!begin) {
 		std::cout << "The list if empty" << std::endl;
 	}

@@ -6,19 +6,17 @@
 template <typename Data>
 class List {
 public:
-	struct element {
+	struct Node {
 		Data data;
-		element* next;
+		Node* next;
 	};
 
-	element* begin = nullptr;
+	Node* begin = nullptr;
 
-	void addBegin(Data* newData);
-	void insert(element* current, Data* newData);
+	void addBegin(Data newData);
+	void insert(Node* current, Data* newData);
 	void addEnd(Data* newData);
-	void printList(element* current);
-	void deleteNode(element* current);
-	void deleteList(element* begin);
+	void printList();
+	void deleteNode(Node* current);
+	void deleteList(Node* begin);
 };
-
-#include "List.inl"

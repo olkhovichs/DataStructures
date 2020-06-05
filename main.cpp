@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "List.h"
+#include "List.inl"
 
 int menuList() {
 	int choice;
@@ -21,12 +22,12 @@ int menuList() {
 int main()
 {
 	int choice = menuList();
-	List<void> action;
-	int number;
+	List<int> action;
+	//List<int> number;
 	switch (choice) {
 	case 1:
 		std::cout << "Add" << std::endl;
-		action.addBegin(static_cast<void>(number)); // приведение типов (ошибка с2664)
+		action.addBegin(5);
 		break;
 	}
 	return 0;
