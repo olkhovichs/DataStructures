@@ -1,7 +1,8 @@
-#include <iostream>
-
 #include "List.h"
 #include "List.inl"
+
+#include <iostream>
+#include <fstream>
 
 int menuMain() {
 	int choice;
@@ -50,17 +51,34 @@ int main()
 	int choiceMain = menuMain();
 	int choiceList = menuList();
 	List<int> action;
-	List<int> number;
+	int data;
+	std::ofstream outFile;
+	outFile.open("out.txt");
+
 
 	switch (choiceMain) {
 	case 1:
 		menuList();
 		switch (choiceList) {
 		case 1:
-			std::cout << "Enter data";
-			//std::istream number; реализовать ввод данных
-			action.addBegin(5);
+			system("cls");
+			std::cout << "Enter data: ";
+			std::cin >> data;
+			action.addBegin(data);
 			break;
+		case 2:
+			system("cls");
+			std::cout << "Enter data: ";
+			std::cin >> data;
+			action.addEnd(&data);
+		/*case 3:
+			system("cls");
+			std::cout << "Enter element: " << std::endl;
+			std::cin >> current;
+			std::cout << "Enter data: ";
+			std::cin >> data;
+			//action.insert(&current, &data);*/
+
 		}
 		break;
 	case 0:
