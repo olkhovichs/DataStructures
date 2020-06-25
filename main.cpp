@@ -1,6 +1,5 @@
 #include "Menu.h"
 #include "List.h"
-#include "List.inl"
 
 #include <iostream>
 #include <fstream>
@@ -10,7 +9,7 @@ int main()
 	int choiceMain = menuMain();
 	int choiceList = menuList();
 
-	int dataSome;
+	int dataSome = 3;
 
 	List<int> action;
 
@@ -24,14 +23,18 @@ int main()
 		case 1: 
 			system("cls");
 			action.addBegin(dataSome);
-			break;
+			menuList();
 		case 2:
 			system("cls");
 			action.addEnd(dataSome);
-			break;
-		case 3:
+			menuList();
+		/*case 3:
 			system("cls");
 			action.insert()
+			break;*/
+		case 4:
+			system("cls");
+			action.printList();
 			break;
 		case 0: 
 			exit(EXIT_SUCCESS);

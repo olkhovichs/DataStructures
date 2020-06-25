@@ -2,23 +2,20 @@
 
 #include <iostream>
 
-
-template <typename Data>
-class List {
+template <class Data> class List {
 public:
 	struct Node {
 		Data data;
 		Node* next;
 	};
-
 	Node* begin = nullptr;
 
 	void addBegin(Data newData);
 	void insert(Node* current, Data* newData);
 	void addEnd(Data newData);
 	void printList();
-	void deleteNode(Node* current);
-	void deleteList(Node* begin);
+//	void deleteNode(Node* current);
+	void deleteList();
 };
 
 template <typename Data>
@@ -55,18 +52,19 @@ void List<Data>::addEnd(Data newData) {
 	}
 }
 
-/*template <typename Data>
+template <typename Data>
 void List<Data>::printList() {
-	if (!current) {
+	Node* temp = begin;
+	if (!temp) {
 		std::cout << "The list is empty" << std::endl;
 	}
 	else {
-		while (current) {
-			std::cout << current->data << " ";
-			current = current->next;
+		while (temp) {
+			std::cout << temp->data << " ";
+			temp = temp->next;
 		}
 	}
-}*/
+}
 
 template <typename Data>
 void List<Data>::deleteNode(Node* current) {
@@ -76,14 +74,13 @@ void List<Data>::deleteNode(Node* current) {
 }
 
 template <typename Data>
-void List<Data>::deleteList(Node* begin) {
-	Node* temp = new Node;
+void List<Data>::deleteList() {
 	if (!begin) {
-		std::cout << "The list if empty" << std::endl;
+		std::cout << "The list is empty" << std::endl;
 	}
 	else {
 		while (begin) {
-			temp = begin;
+			Node* temp = begin; 
 			begin = begin->next;
 			free(temp);
 		}
