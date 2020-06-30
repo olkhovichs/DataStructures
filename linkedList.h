@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 
 template <class Data> class List {
 public:
@@ -11,10 +12,10 @@ public:
 	Node* begin = nullptr;
 
 	void addBegin(Data newData);
-	void insert(Node* current, Data* newData);
+//	void insert(Data newData, int position);
 	void addEnd(Data newData);
 	void printList();
-//	void deleteNode(Node* current);
+	void deleteNode(Node* current);
 	void deleteList();
 };
 
@@ -24,15 +25,18 @@ void List<Data>::addBegin(Data newData) {
 	temp->data = newData;
 	temp->next = begin;
 	begin = temp;
+	std::cout << "Successfull" << std::endl;
 }
 
-template <typename Data>
-void List<Data>::insert(Node* current, Data* newData) {
+/*template <typename Data>
+void List<Data>::insert(Data newData, int position) {
+	Node* current = new Node;
 	Node* temp = new Node;
 	temp->data = newData;
 	temp->next = current->next;
 	current->next = temp;
-}
+	std::cout << "Successfull" << std::endl;
+}*/
 
 template <typename Data>
 void List<Data>::addEnd(Data newData) {
@@ -50,6 +54,7 @@ void List<Data>::addEnd(Data newData) {
 	else {
 		begin = temp;
 	}
+	std::cout << "Successfull" << std::endl;
 }
 
 template <typename Data>
@@ -60,7 +65,7 @@ void List<Data>::printList() {
 	}
 	else {
 		while (temp) {
-			std::cout << temp->data << " ";
+			std::cout << std::setw(2) << temp->data;
 			temp = temp->next;
 		}
 	}
@@ -85,4 +90,5 @@ void List<Data>::deleteList() {
 			free(temp);
 		}
 	}
+	std::cout << "Successfull" << std::endl;
 }
