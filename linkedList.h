@@ -4,23 +4,23 @@
 #include <iomanip>
 
 template <class Data> class List {
-public:
+private:
 	struct Node {
 		Data data;
 		Node* next;
 	};
 	Node* begin = nullptr;
 
+public:
 	void addBegin(Data newData);
-//	void insert(Data newData, int position);
+	void insert(Data newData, int position);
 	void addEnd(Data newData);
 	void printList();
 	void deleteNode(Node* current);
 	void deleteList();
 };
 
-template <typename Data>
-void List<Data>::addBegin(Data newData) {
+template <typename Data> void List<Data>::addBegin(Data newData) {
 	Node* temp = new Node;
 	temp->data = newData;
 	temp->next = begin;
@@ -28,18 +28,16 @@ void List<Data>::addBegin(Data newData) {
 	std::cout << "Successfull" << std::endl;
 }
 
-/*template <typename Data>
-void List<Data>::insert(Data newData, int position) {
+template <typename Data> void List<Data>::insert(Data newData, int position) {
 	Node* current = new Node;
 	Node* temp = new Node;
 	temp->data = newData;
 	temp->next = current->next;
 	current->next = temp;
 	std::cout << "Successfull" << std::endl;
-}*/
+}
 
-template <typename Data>
-void List<Data>::addEnd(Data newData) {
+template <typename Data> void List<Data>::addEnd(Data newData) {
 	Node* temp = new Node;
 	Node* current = new Node;
 	current = begin;
@@ -57,8 +55,7 @@ void List<Data>::addEnd(Data newData) {
 	std::cout << "Successfull" << std::endl;
 }
 
-template <typename Data>
-void List<Data>::printList() {
+template <typename Data> void List<Data>::printList() {
 	Node* temp = begin;
 	if (!temp) {
 		std::cout << "The list is empty" << std::endl;
@@ -71,15 +68,13 @@ void List<Data>::printList() {
 	}
 }
 
-template <typename Data>
-void List<Data>::deleteNode(Node* current) {
+template <typename Data> void List<Data>::deleteNode(Node* current) {
 	Node* temp = current->next;
 	current->next = temp->next;
 	free(temp);
 }
 
-template <typename Data>
-void List<Data>::deleteList() {
+template <typename Data> void List<Data>::deleteList() {
 	if (!begin) {
 		std::cout << "The list is empty" << std::endl;
 	}

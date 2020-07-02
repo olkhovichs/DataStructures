@@ -1,5 +1,6 @@
 #include "Menu.h"
 #include "linkedList.h"
+#include "DoubleLinkedList.h"
 
 #include <iostream>
 #include <fstream>
@@ -12,8 +13,7 @@ int main()
 
 	int dataSome;
 
-	List<int> action;
-	//List<int>::Node* someNode;
+	List<int> actionList;
 
 	std::ifstream inFile;
 	std::ofstream outFile;
@@ -28,24 +28,24 @@ int main()
 			system("cls");
 			std::cout << "Enter data: ";
 			std::cin >> dataSome;
-			action.addBegin(dataSome);
+			actionList.addBegin(dataSome);
 			Sleep(1500);
 			menuList();
 		case 2:
 			system("cls");
 			std::cout << "Enter data: ";
 			std::cin >> dataSome;
-			action.addEnd(dataSome);
+			actionList.addEnd(dataSome);
 			Sleep(1500);
 			menuList();
 		case 3:
 			system("cls");
-			action.printList();
+			actionList.printList();
 			Sleep(5000);
 			menuList();
 		case 4:
 			system("cls");
-			action.deleteList();
+			actionList.deleteList();
 			Sleep(1000);
 			menuList();
 		case 5:
