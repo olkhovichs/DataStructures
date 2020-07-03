@@ -3,17 +3,19 @@
 #include "DoubleLinkedList.h"
 
 #include <iostream>
+#include <Windows.h>
 #include <fstream>
-#include <windows.h>
 
 int main()
 {
 	int choiceMain = menuMain();
 	int choiceList = menuList();
+	int choiceDoubleList = menuDoubleList(); // вызвать функцию в switch
 
 	int dataSome;
 
 	List<int> actionList;
+	DoubleLinkedList<int> actionDoubleList;
 
 	std::ifstream inFile;
 	std::ofstream outFile;
@@ -51,6 +53,41 @@ int main()
 		case 5:
 			menuMain();
 		case 0: 
+			exit(EXIT_SUCCESS);
+		default:
+			std::cerr << "Incorrect choice" << std::endl;
+			exit(EXIT_SUCCESS);
+		}
+	case 2:
+		switch (choiceDoubleList) {
+			menuDoubleList();
+		case 1:
+			system("cls");
+			std::cout << "Enter data: ";
+			std::cin >> dataSome;
+			actionDoubleList.addBegin(dataSome);
+			Sleep(1500);
+			menuDoubleList();
+		case 2:
+			system("cls");
+			std::cout << "Enter Data: ";
+			std::cin >> dataSome;
+			actionDoubleList.addEnd(dataSome);
+			Sleep(1500);
+			menuDoubleList();
+		case 3:
+			system("cls");
+			actionDoubleList.printDoubleList();
+			Sleep(5000);
+			menuDoubleList();
+		case 4:
+			system("cls");
+			actionDoubleList.deleteDoubleList();
+			Sleep(1500);
+			menuDoubleList();
+		case 5:
+			menuMain();
+		case 0:
 			exit(EXIT_SUCCESS);
 		default:
 			std::cerr << "Incorrect choice" << std::endl;

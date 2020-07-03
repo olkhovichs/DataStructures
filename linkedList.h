@@ -1,8 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <iomanip>
-
 template <class Data> class List {
 private:
 	struct Node {
