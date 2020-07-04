@@ -3,6 +3,13 @@
 #include <iostream>
 #include <iomanip>
 
-int menuMain();
-int menuList();
-int menuDoubleList();
+class Menu {
+public:
+	int choiceMain;
+	int choiceList;
+	int choiceDoubleList;
+
+	int menuMain();
+	int menuList();
+	int menuDoubleList();
+};

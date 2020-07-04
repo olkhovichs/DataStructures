@@ -1,7 +1,7 @@
 #include "Menu.h"
 
-int menuMain() {
-	int choice;
+int Menu::menuMain() {
+	choiceMain = 0;
 	system("cls");
 	std::cout << "1. Linked list" << std::endl;
 	std::cout << "2. Double linked list" << std::endl;
@@ -11,12 +11,12 @@ int menuMain() {
 	std::cout << "6. Binary heap" << std::endl;
 	std::cout << "7. Graphs" << std::endl;
 	std::cout << "0. Exit" << std::endl;
-	std::cin >> choice;
-	return choice;
+	std::cin >> choiceMain;
+	return choiceMain;
 }
 
-int menuList() {
-	int choice;
+int Menu::menuList() {
+	choiceList = 0;
 	system("cls");
 	std::cout << "Choice action: " << std::endl;
 	std::cout << "1. Add an element to the beginning" << std::endl;
@@ -27,12 +27,12 @@ int menuList() {
 	std::cout << "4. Delete list" << std::endl;
 	std::cout << "5. Return back" << std::endl;
 	std::cout << "0. Exit" << std::endl;
-	std::cin >> choice;
-	return choice;
+	std::cin >> choiceList;
+	return choiceList;
 }
 
-int menuDoubleList() {
-	int choice;
+int Menu::menuDoubleList() {
+	choiceDoubleList = 0;
 	system("cls");
 	std::cout << "Choice action: " << std::endl;
 	std::cout << "1. Add an element to the beginning" << std::endl;
@@ -41,6 +41,6 @@ int menuDoubleList() {
 	std::cout << "4. Delete list" << std::endl;
 	std::cout << "5. Return back" << std::endl;
 	std::cout << "0. Exit" << std::endl;
-	std::cin >> choice;
-	return choice;
+	std::cin >> choiceDoubleList;
+	return choiceDoubleList;
 }
