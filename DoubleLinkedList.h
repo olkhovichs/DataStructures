@@ -14,7 +14,6 @@ public:
 	void addBegin(Data newData);
 	void addEnd(Data newData);
 	void printDoubleList();
-	void deleteNode();
 	void deleteDoubleList();
 };
 
@@ -75,3 +74,4 @@ template <typename Data> void DoubleLinkedList<Data>::deleteDoubleList() {
 	}
 	std::cout << "Successfull" << std::endl;
 }
+

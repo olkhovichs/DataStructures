@@ -145,6 +145,7 @@
     <ClInclude Include="DoubleLinkedList.h" />
     <ClInclude Include="linkedList.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
