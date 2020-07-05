@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "linkedList.h"
 #include "DoubleLinkedList.h"
+#include "Stack.h"
 
 #include <iostream>
 #include <Windows.h>
@@ -11,6 +12,7 @@ int main()
 	Menu* choice = new Menu;
 	List<int> actionList;
 	DoubleLinkedList<int> actionDoubleList;
+	Stack<int> actionStack;
 
 	int dataSome;
 
@@ -89,6 +91,25 @@ int main()
 		default:
 			std::cerr << "Incorrect choice" << std::endl;
 			exit(EXIT_SUCCESS);
+		}
+	case 3:
+		switch (choice->menuStack()) {
+			choice->menuStack();
+		case 1:
+			system("cls");
+			std::cout << "Enter data: ";
+			std::cin >> dataSome;
+			actionStack.pushCell(dataSome);
+			Sleep(1500);
+			choice->menuStack();
+		case 2:
+			system("cls");
+			actionStack.popCell();
+			Sleep(1500);
+			choice->menuStack();
+		/*case 3:
+			system("cls");*/
+
 		}
 	case 0: 
 		exit(EXIT_SUCCESS);

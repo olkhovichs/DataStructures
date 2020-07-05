@@ -9,8 +9,9 @@ private:
 
 	Cell* top = nullptr;
 
+public:
 	void pushCell(Data newData);
-	void popCell(Data newData);
+	void popCell();
 	void deleteStack();
 	void printStack();
 };
@@ -25,11 +26,17 @@ template <typename Data> void Stack<Data>::pushCell(Data newData) {
 		temp->next = top;
 		top = temp;
 	}
+	std::cout << "Successfull" << std::endl;
 }
 
-/*template <typename Data> void Stack<Data>::popCell(Data newData) {
+template <typename Data> void Stack<Data>::popCell() {
 	Cell* temp = new Cell;
+	Cell* prev = new Cell;
 	if (top != nullptr) {
-
+		free(top);
+		std::cout << "Successfull" << std::endl;
 	}
-}*/
+	else {
+		std::cout << "Stack is empty" << std::endl;
+	}
+}

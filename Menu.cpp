@@ -44,3 +44,17 @@ int Menu::menuDoubleList() {
 	std::cin >> choiceDoubleList;
 	return choiceDoubleList;
 }
+
+int Menu::menuStack() {
+	choiceStack = 0;
+	system("cls");
+	std::cout << "Choice action: " << std::endl;
+	std::cout << "1. Add element" << std::endl;
+	std::cout << "2. Delete element" << std::endl;
+	std::cout << "3. Output list" << std::endl;
+	std::cout << "4. Delete stack" << std::endl;
+	std::cout << "5. Return back" << std::endl;
+	std::cout << "0. Exit" << std::endl;
+	std::cin >> choiceStack;
+	return choiceStack;
+}
