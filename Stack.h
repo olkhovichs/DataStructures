@@ -12,8 +12,8 @@ private:
 public:
 	void pushCell(Data newData);
 	void popCell();
-	void deleteStack();
 	void printStack();
+	void deleteStack();
 };
 
 template <typename Data> void Stack<Data>::pushCell(Data newData) {
@@ -31,9 +31,38 @@ template <typename Data> void Stack<Data>::pushCell(Data newData) {
 
 template <typename Data> void Stack<Data>::popCell() {
 	Cell* temp = new Cell;
-	Cell* prev = new Cell;
 	if (top != nullptr) {
-		free(top);
+		temp = top;
+		top = top->next;
+		free(temp);
+		std::cout << "Successfull" << std::endl;
+	}
+	else {
+		std::cout << "Stack is empty" << std::endl;
+	}
+}
+
+template <typename Data> void Stack<Data>::printStack() {
+	Cell* temp = new Cell;
+	temp = top;
+	if (top != nullptr) {
+		while (temp) {
+			std::cout << std::setw(2) << temp->data; // ошибка
+			temp = temp->next;
+		}
+	}
+	else {
+		std::cout << "Stack is empty" << std::endl;
+	}
+}
+
+template <typename Data> void Stack<Data>::deleteStack() {
+	if (top != nullptr) {
+		while (top) {
+			Cell* temp = top;
+			top = top->next;
+			free(temp);
+		}
 		std::cout << "Successfull" << std::endl;
 	}
 	else {

@@ -107,9 +107,23 @@ int main()
 			actionStack.popCell();
 			Sleep(1500);
 			choice->menuStack();
-		/*case 3:
-			system("cls");*/
-
+		case 3:
+			system("cls");
+			actionStack.printStack();
+			Sleep(5000);
+			choice->menuStack();
+		case 4:
+			system("cls");
+			actionStack.deleteStack();
+			Sleep(1500);
+			choice->menuStack();
+		case 5:
+			choice->menuMain();
+		case 0:
+			exit(EXIT_SUCCESS);
+		default:
+			std::cerr << "Incorrect choice" << std::endl;
+			exit(EXIT_SUCCESS);
 		}
 	case 0: 
 		exit(EXIT_SUCCESS);
