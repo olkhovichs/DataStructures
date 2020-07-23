@@ -47,7 +47,7 @@ template <typename Data> void Stack<Data>::printStack() {
 	temp = top;
 	if (top != nullptr) {
 		while (temp) {
-			std::cout << std::setw(2) << temp->data; // ошибка
+			std::cout << std::setw(2) << temp->data; // error
 			temp = temp->next;
 		}
 	}
@@ -60,7 +60,7 @@ template <typename Data> void Stack<Data>::deleteStack() {
 	if (top != nullptr) {
 		while (top) {
 			Cell* temp = top;
-			top = top->next;
+			top = top->next; // error
 			free(temp);
 		}
 		std::cout << "Successfull" << std::endl;
