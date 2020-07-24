@@ -9,9 +9,11 @@ public:
 	int choiceList;
 	int choiceDoubleList;
 	int choiceStack;
+	int choiceQueue;
 
 	int menuMain();
 	int menuList();
 	int menuDoubleList();
 	int menuStack();
+	int menuQueue();
 };

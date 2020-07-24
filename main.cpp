@@ -2,6 +2,7 @@
 #include "linkedList.h"
 #include "DoubleLinkedList.h"
 #include "Stack.h"
+#include "Queue.h"
 
 #include <iostream>
 #include <Windows.h>
@@ -13,6 +14,7 @@ int main()
 	List<int> actionList;
 	DoubleLinkedList<int> actionDoubleList;
 	Stack<int> actionStack;
+	Queue<int> actionQueue;
 
 	int dataSome;
 
@@ -117,6 +119,39 @@ int main()
 			actionStack.deleteStack();
 			Sleep(1500);
 			choice->menuStack();
+		case 5:
+			choice->menuMain();
+		case 0:
+			exit(EXIT_SUCCESS);
+		default:
+			std::cerr << "Incorrect choice" << std::endl;
+			exit(EXIT_SUCCESS);
+		}
+	case 4:
+		switch (choice->menuQueue()) {
+			choice->menuQueue();
+		case 1:
+			system("cls");
+			std::cout << "Enter data: ";
+			std::cin >> dataSome;
+			actionQueue.pushElement(dataSome);
+			Sleep(1500);
+			choice->menuQueue();
+		case 2:
+			system("cls");
+			actionQueue.popElement();
+			Sleep(1500);
+			choice->menuQueue();
+		case 3:
+			system("cls");
+			actionQueue.printQueue();
+			Sleep(5000);
+			choice->menuQueue();
+		case 4:
+			system("cls");
+			actionQueue.deleteQueue();
+			Sleep(1500);
+			choice->menuQueue();
 		case 5:
 			choice->menuMain();
 		case 0:
