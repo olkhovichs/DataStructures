@@ -142,6 +142,7 @@
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinTree.h" />
     <ClInclude Include="DoubleLinkedList.h" />
     <ClInclude Include="linkedList.h" />
     <ClInclude Include="Menu.h" />
