@@ -72,3 +72,19 @@ int Menu::menuQueue() {
 	std::cin >> choiceQueue;
 	return choiceQueue;
 }
+
+int Menu::menuTree() {
+	choiceTree = 0;
+	system("cls");
+	std::cout << "Choice action: " << std::endl;
+	std::cout << "1. Add element" << std::endl;
+	std::cout << "2. Delete element" << std::endl;
+	std::cout << "3. Prefix bypass" << std::endl;
+	std::cout << "4. Infix bypass" << std::endl;
+	std::cout << "5. Postfix bypass" << std::endl;
+	std::cout << "6. Delete tree" << std::endl;
+	std::cout << "7. Return back" << std::endl;
+	std::cout << "0. Exit" << std::endl;
+	std::cin >> choiceTree;
+	return choiceTree;
+}

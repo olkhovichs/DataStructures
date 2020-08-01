@@ -10,10 +10,12 @@ private:
 
 public:
 	bool checkEmpty(Node* tree);
-	void addNode(Data newData, Node* Tree);
+	void addNode(Data newData, Node* tree);
 	void pre_printTree(Node* tree);
 	void in_printTree(Node* tree);
 	void post_printTree(Node* tree);
+	void deleteMem(Node* tree);
+	void deleteTree(Node* tree);
 };
 
 template <typename Data> bool BinTree<Data>::checkEmpty(Node* tree) {
@@ -68,6 +70,28 @@ template <typename Data> void BinTree<Data>::post_printTree(Node* tree) {
 		post_printTree(tree->left);
 		post_printTree(tree - right);
 		std::cout << tree->key;
+	}
+	else {
+		checkEmpty(tree);
+	}
+}
+
+template <typename Data> void BinTree<Data>::deleteMem(Node* tree) {
+	if (!checkEmpty(tree)) {
+		deleteMem(tree->left);
+		deleteMem(tree->right);
+		delete tree;
+	}
+	else {
+		checkEmpty(tree);
+	}
+}
+
+template <typename Data> void BinTree<Data>::deleteTree(Node* tree) {
+	if (!checkEmpty(tree)) {
+		while (checkEmpty) {
+			deleteMem(tree);
+		}
 	}
 	else {
 		checkEmpty(tree);

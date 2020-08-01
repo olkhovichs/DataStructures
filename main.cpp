@@ -3,6 +3,7 @@
 #include "DoubleLinkedList.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "BinTree.h"
 
 #include <iostream>
 #include <Windows.h>
@@ -15,6 +16,7 @@ int main()
 	DoubleLinkedList<int> actionDoubleList;
 	Stack<int> actionStack;
 	Queue<int> actionQueue;
+	BinTree<int> actionTree;
 
 	int dataSome;
 
